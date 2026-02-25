@@ -21,10 +21,6 @@ public class AdminInitializer {
     @Bean
     CommandLineRunner initAdmin(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         return args -> {
-            log.warn("╔════════════════════════════════════════════════════╗");
-            log.warn("║        ADMIN CommandLineRunner STARTED             ║");
-            log.warn("╚════════════════════════════════════════════════════╝");
-
             if (userRepository.findByEmail(ADMIN_EMAIL).isEmpty()) {
                 log.warn("Creating default admin user...");
                 User admin = new User();
@@ -37,10 +33,6 @@ public class AdminInitializer {
             } else {
                 log.warn("Admin already exists");
             }
-
-            log.warn("╔════════════════════════════════════════════════════╗");
-            log.warn("║        ADMIN CommandLineRunner FINISHED            ║");
-            log.warn("╚════════════════════════════════════════════════════╝");
         };
     }
 }
