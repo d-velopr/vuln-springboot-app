@@ -31,9 +31,9 @@ dvelupmint/
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/yourusername/your-repo.git
+   git clone https://github.com/d-velopr/vuln-springboot-app.git
 
-   cd your-repo
+   cd vuln-springboot-app
 2. Copy and adjust environment variables
     ```bash
     cp .env.example .env
