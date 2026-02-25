@@ -1,10 +1,12 @@
 # Dvelupmint
+### This web application is intentionally vulnerable; once up and running, open up *Burp Suite* and write a security report.
 
-**Backend** - Spring Boot + Postgresql (JDBC)
+## Application Requirements 
+**Backend** - Spring Boot, Postgresql, JDBC
 
-**Frontend** - React (built and served with Nginx)
+**Frontend** - React, Node.js (built and served with Nginx)
 
-**Everything runs in Docker** – very easy to start!
+**Everything runs easy in** – Docker
 ## Project Structure
 
 dvelupmint/
@@ -57,4 +59,5 @@ Backend API → http://localhost:8080/api/…
 (optional) pgAdmin → http://localhost:5050 (if enabled)
 
 # Shutdown Gracefully
+```bash
 docker compose down
