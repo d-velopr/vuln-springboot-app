@@ -8,7 +8,7 @@
 
 **Everything runs easy in** – Docker
 ## Admin Access
-- Log in as superadmin || superadmin@email.com : admin123
+- Log in as superadmin@email.com : admin123
 ## Base User
 - Register with any username, email, and password
 # Project Structure

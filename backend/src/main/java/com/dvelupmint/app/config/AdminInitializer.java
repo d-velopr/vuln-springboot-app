@@ -21,18 +21,29 @@ public class AdminInitializer {
     @Bean
     CommandLineRunner initAdmin(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         return args -> {
-            if (userRepository.findByEmail(ADMIN_EMAIL).isEmpty()) {
+            var optionalUser = userRepository.findByEmail(ADMIN_EMAIL);
+
+            User admin;
+            if (optionalUser.isEmpty()) {
                 log.warn("Creating default admin user...");
-                User admin = new User();
+                admin = new User();
                 admin.setEmail(ADMIN_EMAIL);
                 admin.setUsername(ADMIN_USERNAME);
                 admin.setPassword(passwordEncoder.encode(ADMIN_PASSWORD));
                 admin.setRole("ADMIN");
-                userRepository.save(admin);
-                log.warn("ADMIN CREATED → login with: {} / {}", ADMIN_EMAIL, ADMIN_PASSWORD);
             } else {
-                log.warn("Admin already exists");
+                admin = optionalUser.get();
+                if (!"ADMIN".equals(admin.getRole())) {
+                    log.warn("Repairing superadmin role → was {}, setting to ADMIN", admin.getRole());
+                    admin.setRole("ADMIN");
+                } else {
+                    log.info("Superadmin already exists with correct role");
+                    return;
+                }
             }
+
+            userRepository.save(admin);
+            log.warn("SUPERADMIN ENSURED → login with: {} / {}", ADMIN_EMAIL, ADMIN_PASSWORD);
         };
     }
 }
