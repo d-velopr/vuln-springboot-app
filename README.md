@@ -1,5 +1,5 @@
 # Dvelupmint
-### This web application is intentionally vulnerable; once up and running, open up *Burp Suite* and write a security report.
+### This web application is intentionally vulnerable; once up and running, open up *Burp Suite* and write a security report
 
 ## Application Requirements 
 **Backend** - Spring Boot, Postgresql, JDBC
@@ -7,7 +7,11 @@
 **Frontend** - React, Node.js (built and served with Nginx)
 
 **Everything runs easy in** – Docker
-## Project Structure
+## Admin Access
+- Log in as superadmin@example.com : admin123
+## Base User
+- Register with any username, email, and password
+# Project Structure
 
 dvelupmint/
 - backend/<br />
