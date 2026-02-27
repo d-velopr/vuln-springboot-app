@@ -1,4 +1,4 @@
-# Dvelupmint
+# Advanced Web Threats II (Spring Boot)
 ### This web application is intentionally vulnerable; once up and running, open up *Burp Suite* and write a security report
 
 ## Application Requirements 
